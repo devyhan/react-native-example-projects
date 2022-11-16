@@ -1,3 +1,24 @@
+```mermaid
+stateDiagram-v2
+
+App --> PropsRootComponent
+App --> Provider 
+
+Provider --> ReduxRootComponent
+
+PropsRootComponent --> PropTopParentsComponent
+PropsRootComponent --> PropsBottomParentsComponent
+
+PropTopParentsComponent --> PropsTopChildrenComponent
+PropsBottomParentsComponent --> StateBottomChildrenComponent
+
+ReduxRootComponent --> ReduxTopParentsComponent
+ReduxRootComponent --> ReduxBottomParentsComponent
+
+ReduxTopParentsComponent --> ReduxTopChildrenComponent
+ReduxBottomParentsComponent --> ReduxBottomChildrenComponent
+```
+
 # react-native-redux-typescript
 
 Generate to project with `CRNA`
