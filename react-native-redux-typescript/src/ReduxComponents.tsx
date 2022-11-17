@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
+import { StyleSheet, Text, View } from 'react-native';
+import { useSelector } from 'react-redux';
 import { RootState } from '../App';
+import CounterContainer from './containers/CounterContainer';
 
 function ReduxRootComponent(): React.ReactElement {
   return (
@@ -23,14 +24,10 @@ function ReduxTopParentsComponent() {
 }
 
 function ReduxTopChildrenComponent() {
-  const dispatch = useDispatch();
   return (
     <View style={styles.container}>
       <Text>ReduxTopChildrenComponent</Text>
-      <Button
-        onPress={() => dispatch({ type: "PLUS" })}
-        title={"Add to state number"}
-      />
+      <CounterContainer />
     </View>
   );
 }
@@ -46,11 +43,11 @@ function ReduxBottomParentsComponent() {
 }
 
 function ReduxBottomChildrenComponent() {
-  const number = useSelector((state: RootState) => state.number);
+  const count = useSelector((state: RootState) => state.counter.count);
   return (
     <View style={styles.container}>
       <Text>ReduxBottomChildrenComponent</Text>
-      <Text style={{ fontSize: 20 }}>number state: {number}</Text>
+      <Text style={{fontSize: 20}}>number state: {count}</Text>
     </View>
   );
 }

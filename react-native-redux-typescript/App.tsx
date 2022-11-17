@@ -4,32 +4,11 @@ import { SafeAreaView, StyleSheet, Text } from 'react-native';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
-import PropsRootComponent from './components/PropsRootComponent';
-import ReduxRootComponent from './components/ReduxComponents';
+import counter from './src/modules/counter';
+import PropsRootComponent from './src/PropsRootComponent';
+import ReduxRootComponent from './src/ReduxComponents';
 
-interface State {
-  number: number
-}
-
-interface Action {
-  type: string
-}
-
-const rootReducer = combineReducers({
-  reducer
-});
-
-function reducer(state: State, action: Action) {
-    if (state === undefined) {
-        return {
-            number: 0,
-        };
-    }
-    const newState = { ...state };
-    if (action.type === 'PLUS') newState.number++;
-    return newState;
-}
-
+const rootReducer = combineReducers({ counter });
 const store = createStore(rootReducer);
 
 export default function App() {
@@ -63,4 +42,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export type RootState = ReturnType<typeof reducer>;
+export type RootState = ReturnType<typeof rootReducer>;
