@@ -1,6 +1,7 @@
-import React from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
-import { useSelector, useDispatch } from "react-redux";
+import React from 'react';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../App';
 
 function ReduxRootComponent(): React.ReactElement {
   return (
@@ -45,7 +46,7 @@ function ReduxBottomParentsComponent() {
 }
 
 function ReduxBottomChildrenComponent() {
-  const number = useSelector((state) => state.number);
+  const number = useSelector((state: RootState) => state.number);
   return (
     <View style={styles.container}>
       <Text>ReduxBottomChildrenComponent</Text>

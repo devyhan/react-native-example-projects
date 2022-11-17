@@ -1,35 +1,40 @@
-import React, { useState } from "react";
+import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
-function PropsRootComponent(props) {
+type Counter = {
+  number: number;
+  onIncrease?: () => void;
+};
+
+function PropsRootComponent(props: Counter) {
     return (
       <View style={styles.container}>
         <Text>PropsRootComponent</Text>
-        <PropTopParentsComponent number={props.number} onIncrease={() => { props.onIncrease(); }}/>
+        <PropTopParentsComponent number={props.number} onIncrease={() => { props.onIncrease?.(); }}/>
         <PropsBottomParentsComponent number={props.number}/>
       </View>
     );
 }
 
-function PropTopParentsComponent(props) {
+function PropTopParentsComponent(props: Counter) {
     return (
       <View style={styles.container}>
         <Text>PropTopParentsComponent</Text>
-        <PropsTopChildrenComponent number={props.number} onIncrease={() => { props.onIncrease(); }} />
+        <PropsTopChildrenComponent number={props.number} onIncrease={() => { props.onIncrease?.(); }} />
       </View>
     );
 }
 
-function PropsTopChildrenComponent(props) {
+function PropsTopChildrenComponent(props: Counter) {
     return (
       <View style={styles.container}>
         <Text>PropsTopChildrenComponent</Text>
-        <Button onPress={() => { props.onIncrease(); }} title={'Add to props number'} />
+        <Button onPress={() => { props.onIncrease?.(); }} title={'Add to props number'} />
       </View>
     );
 }
 
-function PropsBottomParentsComponent(props) {
+function PropsBottomParentsComponent(props: Counter) {
     console.log("PropsBottomParentsComponent update")
     return (
       <View style={styles.container}>
@@ -39,7 +44,7 @@ function PropsBottomParentsComponent(props) {
     );
 }
 
-function StateBottomChildrenComponent(props) {
+function StateBottomChildrenComponent(props: Counter) {
     return (
       <View style={styles.container}>
         <Text>PropsBottomChildrenComponent</Text>
