@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "react-native-twitter",
+    "slug": "react-native-twitter",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "react-native-twitter"
+}

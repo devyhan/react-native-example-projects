@@ -17,6 +17,9 @@ ReduxRootComponent --> ReduxBottomParentsComponent
 
 ReduxTopParentsComponent --> ReduxTopChildrenComponent
 ReduxBottomParentsComponent --> ReduxBottomChildrenComponent
+
+ReduxBottomChildrenComponent --> CounterContainer
+CounterContainer --> Counter
 ```
 
 # react-native-redux-typescript
@@ -64,9 +67,6 @@ Check dependency to `@type/react-redux` and if not found manually install them
 ```bash
 # NPM
 $ npm install @types/react-redux
-
-# Yarn
-$ yarn add @types/react-redux
 ```
 
 ![](./redux.gif)
@@ -75,3 +75,6 @@ Ref.
 > https://github.com/expo/create-react-native-app  
 > https://reactnative.dev/docs/next/typescript  
 > https://redux.js.org/tutorials/typescript-quick-start  
+> https://github.com/erikras/ducks-modular-redux
+> https://medium.com/swlh/the-good-the-bad-of-react-redux-and-why-ducks-might-be-the-solution-1567d5bdc698
+> https://medium.com/@matthew.holman/what-is-redux-ducks-46bcb1ad04b7
