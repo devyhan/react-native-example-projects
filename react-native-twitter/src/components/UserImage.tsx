@@ -1,11 +1,21 @@
 import React from "react";
-import { Image, Text } from 'react-native';
+import { Image, StyleSheet, Text } from 'react-native';
 
 type UserImageProps = {
-    uri: string
+    uri: string,
+    size: number
 }
 
-export default function UserImage({uri}: UserImageProps)  {
+export default function UserImage({uri, size}: UserImageProps)  {
     const imageUri = {uri: uri}
-    return <Image source={{uri: uri}} style={{resizeMode: 'contain', width: 100, height: 100}} />
+    return <Image source={{uri: uri}} style={styles(size).image} />
 }
+
+const styles = (size: number) => StyleSheet.create({
+    image: {
+        resizeMode: 'contain', 
+        width: size, 
+        height: size,
+        borderRadius: size / 2
+    }
+});

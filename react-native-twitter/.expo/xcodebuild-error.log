@@ -1,0 +1,6 @@
+2022-11-24 16:51:14.179 xcodebuild[12743:14064832]  DVTAssertions: Warning in /System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot2/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-21157/DTDeviceKitBase/DTDKRemoteDeviceData.m:382
+Details:  (null) deviceType from 00008020-001C65092109002E was NULL when -platform called.
+Object:   <DTDKMobileDeviceToken: 0x7f9cec037220>
+Method:   -platform
+Thread:   <NSThread: 0x7f9ceb9288a0>{number = 6, name = (null)}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.

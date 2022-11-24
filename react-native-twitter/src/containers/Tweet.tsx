@@ -10,7 +10,7 @@ export default function Tweet() {
 
     return (
         <View style={styles.image}>
-            <UserImage uri={uri} />
+            <UserImage uri={uri} size={55}/>
         </View>
     );
 }
